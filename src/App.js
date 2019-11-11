@@ -59,6 +59,43 @@ function App() {
     }]
   });
 
+  const [areaOfInterest, setAreaOfInterest] = useState({
+
+    colors: ['#785ef0', '#5cceba', '#f6af32', '#332688', '#88ccee'],
+    chart: {
+      type: 'bar'
+    },
+    legend: false,
+    title: {
+      text: 'Candidatos por área de interesse'
+    },
+    xAxis: {
+      categories: ['Administração', 'Economia', 'Psicologia', 'Markenting', 'Biomedicina']
+    },
+    yAxis: {
+      min: 0,
+      title: false,
+    },
+    plotOptions: {
+      series: {
+        stacking: 'normal'
+      }
+    },
+    series: [{
+      name: 'John',
+      data: [5, 3, 4, 7, 2],
+    }, {
+      name: 'Jane',
+      data: [2, 2, 3, 2, 1]
+    }, {
+      name: 'Joe',
+      data: [3, 4, 4, 2, 5]
+    }],
+    credits: {
+      enabled: false
+    },
+  });
+
   return (
     <div className="App">
       <HighchartsReact
@@ -68,6 +105,10 @@ function App() {
       <HighchartsReact
         highcharts={Highcharts}
         options={genre}
+      />
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={areaOfInterest}
       />
     </div>
   );
