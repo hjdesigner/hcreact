@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import HC_exporting from 'highcharts/modules/exporting';
+HC_exporting(Highcharts);
 
 function App() {
 
@@ -58,6 +60,7 @@ function App() {
       color: '#785ef0',
     }]
   });
+
 
   const [areaOfInterest, setAreaOfInterest] = useState({
 
